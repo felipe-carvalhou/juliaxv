@@ -121,7 +121,18 @@
     .local{margin-top:14px;padding:26px 18px;border-radius:26px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)}
     .local h2{margin-top:8px;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.1}
     .local .addr{margin-top:8px;font-size:14px;color:rgba(255,255,255,.85)}
-    .map-link{display:inline-block;margin-top:8px;font-size:12px;color:var(--lilac-100);text-underline-offset:3px}
+    .nav-btns{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .nav-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:500;
+      color:#fff;text-decoration:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.35);transition:background .2s, transform .2s}
+    .nav-btn:hover{background:rgba(255,255,255,.18);transform:translateY(-1px)}
+    .nav-btn svg{width:15px;height:15px;flex:none}
+
+    .reminder{position:relative;margin-top:14px;padding:26px 22px 24px;border-radius:24px;overflow:hidden;
+      background:linear-gradient(135deg,rgba(205,179,236,.26),rgba(255,255,255,.06) 60%,rgba(205,179,236,.14));
+      border:1px solid rgba(255,255,255,.38);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+    .reminder::before{content:"";position:absolute;inset:6px;border-radius:19px;border:1px solid rgba(255,255,255,.14);pointer-events:none}
+    .reminder-title{font-family:'Great Vibes',cursive;font-size:2.1rem;line-height:1}
+    .reminder-text{margin-top:10px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-style:italic;font-size:1.25rem;line-height:1.4;color:#fff}
     .line{height:1px;margin:22px auto;max-width:420px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)}
     .note{font-size:14px;line-height:1.8;color:rgba(255,255,255,.85);font-weight:300}
 
@@ -188,7 +199,7 @@
       <h1 class="name silver" id="f-nome">Júlia Elizabelly</h1>
       <div class="divider"><span>✦</span></div>
       <p class="xv serif silver">XV ANOS</p>
-      <p class="lead">Chegou a hora de mergulhar nessa comemoração! Meus 15 anos vão ser à beira da piscina, com muita música, alegria e as pessoas que eu mais amo. A sua presença vai deixar tudo ainda mais especial.</p>
+      <p class="lead">Chegou a hora de mergulhar nessa comemoração! Meus 15 anos vão ser à beira da piscina, com muita música, alegria e as pessoas que amo. A sua presença vai deixar tudo ainda mais especial.</p>
 
       <div class="countdown reveal">
         <p class="cd-title">✦ Contagem regressiva ✦</p>
@@ -227,11 +238,25 @@
         </div>
       </div>
 
+      <div class="reminder reveal">
+        <p class="reminder-title silver">Lembrete especial</p>
+        <p class="reminder-text">Não esqueça seu traje de banho, algo elegante.</p>
+      </div>
+
       <div class="local reveal">
         <p class="label">Local</p>
         <h2 class="serif silver" id="f-local">Clube 351 Eventos</h2>
         <p class="addr" id="f-endereco"></p>
-        <a class="map-link" id="f-mapa" href="#" target="_blank" rel="noopener">Ver no mapa →</a>
+        <div class="nav-btns" id="f-nav">
+          <a class="nav-btn" id="f-maps" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Google Maps
+          </a>
+          <a class="nav-btn" id="f-waze" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+            Abrir no Waze
+          </a>
+        </div>
         <div class="line"></div>
         <p class="note">Prepare o look e o brilho: essa festa vai ser inesquecível 💜</p>
         <p class="rsvp-title serif">Confirme sua presença</p>
@@ -243,7 +268,7 @@
           </a>
           <a class="btn btn-ghost" id="btnAgenda" href="#" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
-            Salvar na agenda
+            <span id="agendaTxt">Salvar na agenda</span>
           </a>
         </div>
       </div>
@@ -276,7 +301,8 @@
       data: '2026-12-12',      // AAAA-MM-DD
       horario: '',             // ex.: '20:00'  → aparece "20h"
       local: 'Clube 351 Eventos',
-      endereco: '',            // ex.: 'Rua Tal, 351 — Bairro, Rio de Janeiro'
+      endereco: 'Rua Bernardino Maciel, 351',
+      cidade: '',              // opcional, ex.: 'Bairro, Cidade - UF' → deixa a rota mais precisa (não aparece no convite)
       whatsapp: '556392545105',            // só números, com 55 + DDD. ex.: '5521999999999'
       confirmarAte: '',        // opcional, ex.: '2026-12-05' → "Confirme até 05/12"
       mensagemRsvp: 'Olá! Quero confirmar presença nos 15 anos da Júlia Elizabelly',
@@ -302,13 +328,15 @@
       $('card-horario').remove();
     }
 
-    // Endereço + mapa
+    // Endereço + rota em tempo real (abre o app de mapas já traçando o caminho a partir de onde a pessoa está)
     if (CONFIG.endereco) {
       $('f-endereco').textContent = CONFIG.endereco;
-      $('f-mapa').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${CONFIG.local}, ${CONFIG.endereco}`);
+      const destino = [CONFIG.endereco, CONFIG.cidade].filter(Boolean).join(', ');
+      $('f-maps').href = 'https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=' + encodeURIComponent(destino);
+      $('f-waze').href = 'https://waze.com/ul?navigate=yes&q=' + encodeURIComponent(destino);
     } else {
       $('f-endereco').remove();
-      $('f-mapa').remove();
+      $('f-nav').remove();
     }
 
     // Confirmar presença (WhatsApp)
@@ -322,25 +350,64 @@
       $('f-prazo').textContent = 'É só tocar no botão e enviar a mensagem 💜';
     }
 
-    // Salvar na agenda (Google Agenda)
+    // Salvar na agenda
+    // iPhone/iPad → abre o Calendário da Apple com o evento pronto (arquivo .ics, com lembrete)
+    // Android/computador → abre o Google Agenda
     (function(){
       const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-      let datas;
+      const local = [CONFIG.local, CONFIG.endereco, CONFIG.cidade].filter(Boolean).join(', ');
+      const titulo = `15 anos da ${CONFIG.nome}`;
+      const detalhes = 'Pool Party • Cores: lilás, prata e branco\nNão esqueça seu traje de banho, algo elegante.';
+      let datas, icsInicio, icsFim, alarme;
       if (CONFIG.horario) {
         const fim = new Date(inicio.getTime() + CONFIG.duracaoHoras * 3600000);
         datas = `${fmt(inicio)}/${fmt(fim)}`;
+        icsInicio = `DTSTART:${fmt(inicio)}`;
+        icsFim = `DTEND:${fmt(fim)}`;
+        alarme = '-P1D';                       // 1 dia antes, no mesmo horário
       } else {
         const prox = new Date(`${CONFIG.data}T12:00:00Z`); prox.setUTCDate(prox.getUTCDate() + 1);
-        datas = `${ano}${mes}${dia}/${prox.toISOString().slice(0,10).replace(/-/g,'')}`;
+        const d2 = prox.toISOString().slice(0,10).replace(/-/g,'');
+        datas = `${ano}${mes}${dia}/${d2}`;
+        icsInicio = `DTSTART;VALUE=DATE:${ano}${mes}${dia}`;
+        icsFim = `DTEND;VALUE=DATE:${d2}`;
+        alarme = '-PT15H';                     // véspera, às 9h
       }
-      const params = new URLSearchParams({
-        action: 'TEMPLATE',
-        text: `15 anos da ${CONFIG.nome} 💜`,
-        dates: datas,
-        location: [CONFIG.local, CONFIG.endereco].filter(Boolean).join(', '),
-        details: 'Pool Party • Cores: lilás, prata e branco'
-      });
-      $('btnAgenda').href = 'https://calendar.google.com/calendar/render?' + params.toString();
+
+      // Google Agenda
+      const params = new URLSearchParams({ action: 'TEMPLATE', text: `${titulo} 💜`, dates: datas, location: local, details: detalhes });
+      const linkGoogle = 'https://calendar.google.com/calendar/render?' + params.toString();
+
+      // Arquivo de calendário (.ics) para o iPhone
+      const esc = (t) => t.replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+      const ics = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Convida&u//Convite//PT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${CONFIG.data}-${CONFIG.nome.toLowerCase().replace(/[^a-z0-9]+/g, '-')}@convidaeu.com.br`,
+        `DTSTAMP:${fmt(new Date())}`,
+        icsInicio, icsFim,
+        `SUMMARY:${esc(titulo)}`,
+        `LOCATION:${esc(local)}`,
+        `DESCRIPTION:${esc(detalhes)}`,
+        'BEGIN:VALARM', 'ACTION:DISPLAY', `DESCRIPTION:${esc('Amanhã é a festa da ' + CONFIG.nome + '!')}`, `TRIGGER:${alarme}`, 'END:VALARM',
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      window.__ics = ics; // usado só para teste
+
+      const ehIPhone = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPad novo
+      const btn = $('btnAgenda');
+      if (ehIPhone) {
+        $('agendaTxt').textContent = 'Salvar no calendário';
+        btn.removeAttribute('target');
+        btn.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.location.href = btn.href;     // o iPhone mostra "Adicionar ao Calendário"
+        });
+      } else {
+        btn.href = linkGoogle;
+      }
     })();
 
     // Contagem regressiva
