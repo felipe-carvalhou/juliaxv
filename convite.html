@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Convite de 15 Anos • Júlia Elizabelly</title>
+  <meta name="description" content="Pool Party de 15 anos da Júlia Elizabelly — 12/12/2026 no Clube 351 Eventos." />
+  <meta property="og:title" content="Júlia Elizabelly • 15 Anos" />
+  <meta property="og:description" content="Pool Party • 12/12/2026 • Clube 351 Eventos 💜" />
+  <meta name="theme-color" content="#3a2259" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    :root{
+      --lilac-900:#24143a; --lilac-800:#3a2259; --lilac-700:#553482;
+      --lilac-500:#9b72cf; --lilac-300:#cdb3ec; --lilac-100:#f1e8fb;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{background:#3a2259}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',system-ui,sans-serif;color:#fff;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+
+    /* ===== FUNDO (água lilás) ===== */
+    .bg{position:fixed;inset:0;z-index:-2;
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(205,179,236,.55), transparent 55%),
+        radial-gradient(ellipse at 8% 55%, rgba(155,114,207,.30), transparent 45%),
+        radial-gradient(ellipse at 92% 75%, rgba(255,255,255,.10), transparent 40%),
+        linear-gradient(180deg,#2e1a49 0%,#4a2d72 40%,#7552a8 100%);}
+    .lights{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.5;mix-blend-mode:soft-light}
+    .lights::before,.lights::after{content:"";position:absolute;inset:-50%;
+      background-image:radial-gradient(circle, rgba(255,255,255,.75) 0 1.5px, transparent 34px);
+      background-size:140px 110px;animation:drift 24s linear infinite}
+    .lights::after{background-size:190px 150px;animation:drift2 34s linear infinite reverse;opacity:.7}
+    @keyframes drift{to{transform:translate(140px,110px)}}
+    @keyframes drift2{to{transform:translate(190px,150px)}}
+
+    #bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .bubble{position:absolute;bottom:-40px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,.18) 38%, rgba(205,179,236,.10) 70%);
+      border:1px solid rgba(255,255,255,.35);animation:rise linear infinite}
+    @keyframes rise{0%{transform:translate(0,0) scale(.6);opacity:0}10%{opacity:.9}
+      50%{transform:translate(var(--sway,20px),-55vh) scale(1)}100%{transform:translate(0,-115vh) scale(1.1);opacity:0}}
+
+    .waves{position:fixed;left:0;bottom:0;width:100%;height:14vh;min-height:80px;max-height:140px;z-index:0;pointer-events:none;opacity:.85}
+    .parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}
+    .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s}
+    .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s}
+    .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s}
+    .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s}
+    @keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}
+
+    /* ===== TIPOGRAFIA ===== */
+    .silver{
+      background:linear-gradient(100deg,#a3a8ba 0%,#ffffff 18%,#cfd2dd 36%,#ffffff 50%,#aab0c1 66%,#f6f7fa 82%,#b7bccb 100%);
+      background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+      animation:shine 6s linear infinite;filter:drop-shadow(0 3px 12px rgba(36,20,58,.45))}
+    @keyframes shine{to{background-position:-200% center}}
+    .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+    .label{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--lilac-100);opacity:.75}
+
+    /* ===== CARTÃO PRINCIPAL ===== */
+    .wrap{position:relative;z-index:2;padding:28px 16px 120px}
+    .card{max-width:760px;margin:0 auto;padding:44px 22px 36px;border-radius:32px;text-align:center;
+      background:linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,.05));
+      border:1px solid rgba(255,255,255,.28);
+      -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+      box-shadow:0 24px 70px rgba(20,10,35,.5), inset 0 1px 0 rgba(255,255,255,.35);
+      animation:fadeUp 1s ease both}
+    @media (min-width:640px){.card{padding:56px 48px 44px}}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+    .eyebrow{font-size:11px;letter-spacing:.48em;text-transform:uppercase;color:var(--lilac-100);opacity:.85;margin-bottom:16px}
+    .emblem{width:118px;height:118px;margin:0 auto 10px;display:block;animation:float 4.5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .emb-wave{animation:embwave 4s linear infinite}
+    .emb-wave.slow{animation-duration:6s}
+    @keyframes embwave{to{transform:translateX(-100px)}}
+    .name{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.7rem,12vw,5.4rem);line-height:1.1;padding:0 .15em}
+    .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px auto;max-width:260px;color:#fff;opacity:.85;font-size:12px}
+    .divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent)}
+    .xv{font-size:clamp(1.6rem,6vw,2.6rem);letter-spacing:.32em;padding-left:.32em}
+    .lead{max-width:540px;margin:20px auto 0;font-size:14.5px;line-height:1.9;color:rgba(255,255,255,.88);font-weight:300}
+
+    /* ===== CONTAGEM ===== */
+    .countdown{max-width:460px;margin:34px auto 0;padding:18px 14px;border-radius:24px;
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22)}
+    .cd-title{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--lilac-100);opacity:.8;margin-bottom:14px}
+    .cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .cd{padding:12px 4px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+    .cd-num{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(1.6rem,6vw,2.4rem);line-height:1;font-variant-numeric:tabular-nums;color:#fff;text-shadow:0 2px 12px rgba(205,179,236,.6)}
+    .cd-lbl{display:block;margin-top:6px;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+    .cd-done{grid-column:span 4;font-family:'Great Vibes',cursive;font-size:2rem;color:#fff}
+
+    /* ===== FOTO ===== */
+    .photo{position:relative;max-width:340px;margin:38px auto 0;padding:5px;border-radius:30px;
+      background:linear-gradient(135deg,#ffffff,#b7bccb 35%,#f4f5f9 55%,#9b72cf 100%);
+      box-shadow:0 18px 45px rgba(20,10,35,.45)}
+    .photo img{display:block;width:100%;height:auto;border-radius:26px;object-fit:cover}
+    .photo::before,.photo::after{content:"";position:absolute;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,#fff,rgba(255,255,255,.2) 45%,rgba(205,179,236,.15));
+      border:1px solid rgba(255,255,255,.5)}
+    .photo::before{width:34px;height:34px;top:-12px;right:-10px}
+    .photo::after{width:20px;height:20px;bottom:24px;left:-12px}
+
+    /* ===== INFORMAÇÕES ===== */
+    .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:38px}
+    .info-grid .info:last-child:nth-child(odd){grid-column:span 2}
+    @media (min-width:720px){.info-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}.info-grid .info:last-child:nth-child(odd){grid-column:auto}}
+    .info{padding:20px 10px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)}
+    .info strong{display:block;margin-top:8px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:1.35rem;line-height:1.2}
+    .info small{display:block;margin-top:2px;font-size:11px;color:rgba(255,255,255,.7)}
+    .dots{display:flex;justify-content:center;gap:6px;margin-top:8px}
+    .dots i{width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.6);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+    .dots i:nth-child(1){background:#b48ee0}
+    .dots i:nth-child(2){background:linear-gradient(135deg,#fff,#b7bccb 50%,#8d93a6)}
+    .dots i:nth-child(3){background:#fff}
+
+    .local{margin-top:14px;padding:26px 18px;border-radius:26px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)}
+    .local h2{margin-top:8px;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.1}
+    .local .addr{margin-top:8px;font-size:14px;color:rgba(255,255,255,.85)}
+    .map-link{display:inline-block;margin-top:8px;font-size:12px;color:var(--lilac-100);text-underline-offset:3px}
+    .line{height:1px;margin:22px auto;max-width:420px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)}
+    .note{font-size:14px;line-height:1.8;color:rgba(255,255,255,.85);font-weight:300}
+
+    .rsvp-title{margin-top:26px;font-size:1.5rem;line-height:1.2}
+    .rsvp-sub{margin-top:4px;font-size:12.5px;color:rgba(255,255,255,.72)}
+    .actions{display:flex;flex-direction:column;gap:12px;margin-top:18px;align-items:center}
+    @media (min-width:560px){.actions{flex-direction:row;justify-content:center}}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:280px;
+      padding:14px 24px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease}
+    .btn svg{width:18px;height:18px;flex:none}
+    .btn-silver{color:var(--lilac-800);
+      background:linear-gradient(135deg,#ffffff 0%,#e1e3eb 40%,#b9bdcc 70%,#f4f5f9 100%);
+      box-shadow:0 10px 26px rgba(20,10,35,.35), inset 0 1px 0 #fff}
+    .btn-silver:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(20,10,35,.45), inset 0 1px 0 #fff}
+    .btn-ghost{color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.4)}
+    .btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+
+    .signature{margin-top:34px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+    /* ===== ANIMAÇÃO AO ROLAR ===== */
+    .js .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
+    .js .reveal.in{opacity:1;transform:none}
+
+    .brand-footer{position:relative;z-index:2;text-align:center;padding:0 16px 24px;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.05em}
+    .brand-footer a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:600}
+    .brand-footer a:hover{color:#fff}
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none !important;transition-duration:.01ms !important}
+      .js .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="lights"></div>
+  <div id="bubbles"></div>
+
+  <main class="wrap">
+    <section class="card">
+      <p class="eyebrow">Pool Party</p>
+
+      <svg class="emblem" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="silverG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#c9cdd9"/>
+            <stop offset=".55" stop-color="#ffffff"/><stop offset=".8" stop-color="#9ea3b5"/>
+            <stop offset="1" stop-color="#eef0f5"/>
+          </linearGradient>
+          <clipPath id="circleClip"><circle cx="100" cy="100" r="78"/></clipPath>
+        </defs>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#silverG)" stroke-width="1.2" opacity=".6"/>
+        <circle cx="100" cy="100" r="80" fill="rgba(255,255,255,.07)" stroke="url(#silverG)" stroke-width="3"/>
+        <g clip-path="url(#circleClip)">
+          <path class="emb-wave" d="M0 128 Q25 118 50 128 T100 128 T150 128 T200 128 T250 128 T300 128 V200 H0Z" fill="rgba(205,179,236,.45)"/>
+          <path class="emb-wave slow" d="M0 140 Q25 131 50 140 T100 140 T150 140 T200 140 T250 140 T300 140 V200 H0Z" fill="rgba(255,255,255,.30)"/>
+        </g>
+        <text x="100" y="117" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="74" font-weight="600" fill="url(#silverG)">15</text>
+        <path d="M162 36 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z" fill="#fff" opacity=".9"/>
+        <path d="M34 152 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff" opacity=".7"/>
+      </svg>
+
+      <h1 class="name silver" id="f-nome">Júlia Elizabelly</h1>
+      <div class="divider"><span>✦</span></div>
+      <p class="xv serif silver">XV ANOS</p>
+      <p class="lead">Chegou a hora de mergulhar nessa comemoração! Meus 15 anos vão ser à beira da piscina, com muita música, alegria e as pessoas que eu mais amo. A sua presença vai deixar tudo ainda mais especial.</p>
+
+      <div class="countdown reveal">
+        <p class="cd-title">✦ Contagem regressiva ✦</p>
+        <div class="cd-grid" id="countdown">
+          <div class="cd"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Dias</span></div>
+          <div class="cd"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
+          <div class="cd"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
+          <div class="cd"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Seg</span></div>
+        </div>
+      </div>
+
+      <!-- Foto: salve a foto da aniversariante como "julia.jpeg" na mesma pasta. Se não tiver foto, este bloco some sozinho. -->
+      <figure class="photo reveal">
+        <img src="julia.jpeg" alt="Foto da Júlia Elizabelly" loading="lazy" onerror="this.closest('figure').remove()">
+      </figure>
+
+      <div class="info-grid reveal">
+        <div class="info">
+          <p class="label">Data</p>
+          <strong id="f-data">12/12/2026</strong>
+          <small id="f-semana">Sábado</small>
+        </div>
+        <div class="info" id="card-horario">
+          <p class="label">Horário</p>
+          <strong id="f-horario"></strong>
+        </div>
+        <div class="info">
+          <p class="label">Tema</p>
+          <strong>Pool Party</strong>
+          <small>Festa na piscina</small>
+        </div>
+        <div class="info">
+          <p class="label">Cores</p>
+          <div class="dots"><i></i><i></i><i></i></div>
+          <small style="margin-top:8px">Lilás, prata &amp; branco</small>
+        </div>
+      </div>
+
+      <div class="local reveal">
+        <p class="label">Local</p>
+        <h2 class="serif silver" id="f-local">Clube 351 Eventos</h2>
+        <p class="addr" id="f-endereco"></p>
+        <a class="map-link" id="f-mapa" href="#" target="_blank" rel="noopener">Ver no mapa →</a>
+        <div class="line"></div>
+        <p class="note">Prepare o look e o brilho: essa festa vai ser inesquecível 💜</p>
+        <p class="rsvp-title serif">Confirme sua presença</p>
+        <p class="rsvp-sub" id="f-prazo"></p>
+        <div class="actions">
+          <a class="btn btn-silver" id="btnRsvp" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 8.2 19.5z"/><path d="M9.2 8.2c.2-.4.5-.5.8-.5h.5l1 2.2-.8.9c.6 1.2 1.5 2.1 2.6 2.7l.9-.8 2.2 1v.5c0 .4-.2.7-.6.9-.6.3-1.4.4-2.2.1-2.3-.9-4-2.7-4.8-5-.2-.7-.1-1.4.4-2z" fill="currentColor" stroke="none"/></svg>
+            Confirmar pelo WhatsApp
+          </a>
+          <a class="btn btn-ghost" id="btnAgenda" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+            Salvar na agenda
+          </a>
+        </div>
+      </div>
+
+      <p class="signature">Júlia Elizabelly • 15 anos • 12/12/2026</p>
+    </section>
+  </main>
+
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" aria-hidden="true">
+    <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+    <g class="parallax">
+      <use href="#gentle-wave" x="48" y="0" fill="rgba(241,232,251,.25)"/>
+      <use href="#gentle-wave" x="48" y="3" fill="rgba(205,179,236,.25)"/>
+      <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,.14)"/>
+      <use href="#gentle-wave" x="48" y="7" fill="rgba(140,100,195,.65)"/>
+    </g>
+  </svg>
+
+  <footer class="brand-footer">
+    Convite criado por <a href="https://convidaeu.com.br" target="_blank" rel="noopener">Convida&amp;u</a>
+  </footer>
+
+  <script>
+    /* =========================================================
+       DADOS DO CONVITE — edite só aqui
+       Campo vazio ('') = o bloco correspondente some do convite.
+       ========================================================= */
+    const CONFIG = {
+      nome: 'Júlia Elizabelly',
+      data: '2026-12-12',      // AAAA-MM-DD
+      horario: '',             // ex.: '20:00'  → aparece "20h"
+      local: 'Clube 351 Eventos',
+      endereco: '',            // ex.: 'Rua Tal, 351 — Bairro, Rio de Janeiro'
+      whatsapp: '556392545105',            // só números, com 55 + DDD. ex.: '5521999999999'
+      confirmarAte: '',        // opcional, ex.: '2026-12-05' → "Confirme até 05/12"
+      mensagemRsvp: 'Olá! Quero confirmar presença nos 15 anos da Júlia Elizabelly',
+      duracaoHoras: 5          // usado só no "Salvar na agenda"
+    };
+    /* ========================================================= */
+
+    const $ = (id) => document.getElementById(id);
+    const [ano, mes, dia] = CONFIG.data.split('-');
+    const semana = ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+    // Brasília (-03:00), sem horário de verão
+    const inicio = new Date(`${CONFIG.data}T${CONFIG.horario || '00:00'}:00-03:00`);
+
+    $('f-data').textContent = `${dia}/${mes}/${ano}`;
+    $('f-semana').textContent = semana[new Date(`${CONFIG.data}T12:00:00-03:00`).getUTCDay()];
+    $('f-local').textContent = CONFIG.local;
+
+    // Horário
+    if (CONFIG.horario) {
+      const [h, m] = CONFIG.horario.split(':');
+      $('f-horario').textContent = `${Number(h)}h${m && m !== '00' ? m : ''}`;
+    } else {
+      $('card-horario').remove();
+    }
+
+    // Endereço + mapa
+    if (CONFIG.endereco) {
+      $('f-endereco').textContent = CONFIG.endereco;
+      $('f-mapa').href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${CONFIG.local}, ${CONFIG.endereco}`);
+    } else {
+      $('f-endereco').remove();
+      $('f-mapa').remove();
+    }
+
+    // Confirmar presença (WhatsApp)
+    // Com número: abre a conversa direto com o responsável já com a mensagem pronta.
+    // Sem número: abre o WhatsApp para a pessoa escolher o contato (só como reserva).
+    $('btnRsvp').href = `https://wa.me/${CONFIG.whatsapp || ''}?text=${encodeURIComponent(CONFIG.mensagemRsvp)}`;
+    if (CONFIG.confirmarAte) {
+      const [, pm, pd] = CONFIG.confirmarAte.split('-');
+      $('f-prazo').textContent = `Por favor, confirme até ${pd}/${pm}`;
+    } else {
+      $('f-prazo').textContent = 'É só tocar no botão e enviar a mensagem 💜';
+    }
+
+    // Salvar na agenda (Google Agenda)
+    (function(){
+      const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      let datas;
+      if (CONFIG.horario) {
+        const fim = new Date(inicio.getTime() + CONFIG.duracaoHoras * 3600000);
+        datas = `${fmt(inicio)}/${fmt(fim)}`;
+      } else {
+        const prox = new Date(`${CONFIG.data}T12:00:00Z`); prox.setUTCDate(prox.getUTCDate() + 1);
+        datas = `${ano}${mes}${dia}/${prox.toISOString().slice(0,10).replace(/-/g,'')}`;
+      }
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: `15 anos da ${CONFIG.nome} 💜`,
+        dates: datas,
+        location: [CONFIG.local, CONFIG.endereco].filter(Boolean).join(', '),
+        details: 'Pool Party • Cores: lilás, prata e branco'
+      });
+      $('btnAgenda').href = 'https://calendar.google.com/calendar/render?' + params.toString();
+    })();
+
+    // Contagem regressiva
+    const pad = (n) => String(n).padStart(2, '0');
+    function tick(){
+      const diff = inicio - new Date();
+      if (diff <= 0) {
+        $('countdown').innerHTML = '<p class="cd-done">A festa chegou! 💜</p>';
+        clearInterval(timer);
+        return;
+      }
+      $('cd-d').textContent = pad(Math.floor(diff / 864e5));
+      $('cd-h').textContent = pad(Math.floor(diff % 864e5 / 36e5));
+      $('cd-m').textContent = pad(Math.floor(diff % 36e5 / 6e4));
+      $('cd-s').textContent = pad(Math.floor(diff % 6e4 / 1e3));
+    }
+    const timer = setInterval(tick, 1000);
+    tick();
+
+    // Bolhas subindo
+    (function(){
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const box = $('bubbles');
+      const n = innerWidth < 640 ? 12 : 20;
+      for (let i = 0; i < n; i++) {
+        const b = document.createElement('span');
+        const s = 6 + Math.random() * 20;
+        b.className = 'bubble';
+        b.style.width = b.style.height = s + 'px';
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDuration = (10 + Math.random() * 10) + 's';
+        b.style.animationDelay = (-Math.random() * 18) + 's';
+        b.style.setProperty('--sway', (Math.random() * 60 - 30) + 'px');
+        box.appendChild(b);
+      }
+    })();
+
+    // Aparecer ao rolar
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

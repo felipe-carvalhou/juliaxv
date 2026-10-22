@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Convite 15 Anos • Júlia Elizabelly</title>
+  <meta name="description" content="Você está convidado(a) para os 15 anos da Júlia Elizabelly — Pool Party em 12/12/2026." />
+  <meta property="og:title" content="Júlia Elizabelly • 15 Anos" />
+  <meta property="og:description" content="Pool Party • 12/12/2026 • Clube 351 Eventos — toque para abrir o convite 💜" />
+  <meta name="theme-color" content="#3a2259" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="prefetch" href="convite.html">
+  <style>
+    :root{
+      --lilac-900:#24143a; --lilac-800:#3a2259; --lilac-700:#553482;
+      --lilac-500:#9b72cf; --lilac-300:#cdb3ec; --lilac-100:#f1e8fb;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{background:#3a2259}
+    body{
+      font-family:'Montserrat',system-ui,sans-serif; color:#fff;
+      min-height:100vh; min-height:100svh; overflow-x:hidden;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    /* ===== FUNDO (água lilás) ===== */
+    .bg{position:fixed;inset:0;z-index:-2;
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(205,179,236,.55), transparent 55%),
+        radial-gradient(ellipse at 8% 55%, rgba(155,114,207,.30), transparent 45%),
+        radial-gradient(ellipse at 92% 75%, rgba(255,255,255,.10), transparent 40%),
+        linear-gradient(180deg,#2e1a49 0%,#4a2d72 40%,#7552a8 100%);}
+    .lights{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;opacity:.5;mix-blend-mode:soft-light}
+    .lights::before,.lights::after{content:"";position:absolute;inset:-50%;
+      background-image:radial-gradient(circle, rgba(255,255,255,.75) 0 1.5px, transparent 34px);
+      background-size:140px 110px; animation:drift 24s linear infinite;}
+    .lights::after{background-size:190px 150px;animation:drift2 34s linear infinite reverse;opacity:.7}
+    @keyframes drift{to{transform:translate(140px,110px)}}
+    @keyframes drift2{to{transform:translate(190px,150px)}}
+
+    #bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .bubble{position:absolute;bottom:-40px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.95), rgba(255,255,255,.18) 38%, rgba(205,179,236,.10) 70%);
+      border:1px solid rgba(255,255,255,.35); animation:rise linear infinite;}
+    @keyframes rise{
+      0%{transform:translate(0,0) scale(.6);opacity:0}
+      10%{opacity:.9}
+      50%{transform:translate(var(--sway,20px),-55vh) scale(1)}
+      100%{transform:translate(0,-115vh) scale(1.1);opacity:0}}
+
+    .waves{position:fixed;left:0;bottom:0;width:100%;height:16vh;min-height:90px;max-height:150px;z-index:0;pointer-events:none}
+    .parallax>use{animation:move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite}
+    .parallax>use:nth-child(1){animation-delay:-2s;animation-duration:7s}
+    .parallax>use:nth-child(2){animation-delay:-3s;animation-duration:10s}
+    .parallax>use:nth-child(3){animation-delay:-4s;animation-duration:13s}
+    .parallax>use:nth-child(4){animation-delay:-5s;animation-duration:20s}
+    @keyframes move-forever{0%{transform:translate3d(-90px,0,0)}100%{transform:translate3d(85px,0,0)}}
+
+    /* ===== TEXTOS ===== */
+    .silver{
+      background:linear-gradient(100deg,#a3a8ba 0%,#ffffff 18%,#cfd2dd 36%,#ffffff 50%,#aab0c1 66%,#f6f7fa 82%,#b7bccb 100%);
+      background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+      animation:shine 6s linear infinite; filter:drop-shadow(0 3px 12px rgba(36,20,58,.45));}
+    @keyframes shine{to{background-position:-200% center}}
+
+    .cover{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;text-align:center;padding:40px 16px 150px}
+    .eyebrow{font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--lilac-100);opacity:.85;margin-bottom:18px}
+    .emblem{width:132px;height:132px;margin-bottom:14px;animation:float 4.5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .emb-wave{animation:embwave 4s linear infinite}
+    .emb-wave.slow{animation-duration:6s}
+    @keyframes embwave{to{transform:translateX(-100px)}}
+    .name{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(2.7rem,12vw,5.6rem);line-height:1.1;padding:0 .15em}
+    .sub{margin-top:10px;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--lilac-100)}
+    .sub b{font-weight:600}
+
+    /* ===== ENVELOPE ===== */
+    .envelope{position:relative;display:block;width:min(300px,78vw);aspect-ratio:1.55;margin:44px auto 0;
+      border:0;background:none;cursor:pointer;perspective:900px;transition:transform .4s ease;
+      filter:drop-shadow(0 18px 28px rgba(20,10,35,.5));}
+    .envelope:hover{transform:translateY(-6px) scale(1.02)}
+    .envelope:focus-visible{outline:2px solid #fff;outline-offset:8px;border-radius:12px}
+    .envelope span{position:absolute;display:block}
+    .env-back{inset:0;border-radius:10px;background:linear-gradient(160deg,#c6a6ea,#8f63c6);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+    .env-letter{left:7%;right:7%;top:6%;height:86%;z-index:2;border-radius:8px;
+      background:linear-gradient(180deg,#ffffff,#f1e8fb);box-shadow:0 2px 10px rgba(0,0,0,.15);
+      display:flex !important;align-items:flex-start;justify-content:center;padding-top:9%;
+      transition:transform .9s cubic-bezier(.2,.8,.2,1) .35s}
+    .letter-text{position:static !important;font-family:'Great Vibes',cursive;font-size:clamp(1.7rem,8vw,2.2rem);color:var(--lilac-700);line-height:1}
+    .letter-text small{display:block;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.4em;color:var(--lilac-500);margin-top:8px}
+    .env-front{inset:0;z-index:3;border-radius:10px;
+      background:linear-gradient(170deg,#e9dcf8 0%,#cbb0ec 55%,#b48ee0 100%);
+      clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+    .env-flap{left:0;right:0;top:0;height:100%;z-index:4;transform-origin:top center;
+      background:linear-gradient(180deg,#d7c0f2,#a77cd9);
+      clip-path:polygon(0 0,100% 0,50% 56%);
+      transition:transform .6s ease, z-index 0s .3s}
+    .env-seal{z-index:5;left:50%;top:56%;width:54px;height:54px;border-radius:50%;
+      transform:translate(-50%,-50%);display:flex !important;align-items:center;justify-content:center;
+      background:radial-gradient(circle at 35% 30%,#ffffff 0%,#dfe2ea 35%,#a9aec0 75%,#8b91a5 100%);
+      box-shadow:0 4px 10px rgba(36,20,58,.35), inset 0 0 0 3px rgba(255,255,255,.5);
+      font-family:'Great Vibes',cursive;font-size:30px;color:var(--lilac-700);
+      animation:pulse 2.4s ease-in-out infinite;transition:opacity .3s, transform .3s}
+    @keyframes pulse{0%,100%{box-shadow:0 4px 10px rgba(36,20,58,.35),0 0 0 0 rgba(255,255,255,.45),inset 0 0 0 3px rgba(255,255,255,.5)}
+      50%{box-shadow:0 4px 10px rgba(36,20,58,.35),0 0 0 12px rgba(255,255,255,0),inset 0 0 0 3px rgba(255,255,255,.5)}}
+    .envelope.open{transform:none}
+    .envelope.open .env-flap{transform:rotateX(180deg);z-index:1}
+    .envelope.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.6)}
+    .envelope.open .env-letter{transform:translateY(-58%)}
+
+    .hint{margin-top:28px;font-size:13px;color:var(--lilac-100);opacity:.85;letter-spacing:.04em}
+    .hint span{display:inline-block;animation:tap 1.6s ease-in-out infinite}
+    @keyframes tap{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+    .fade-out{animation:fadeout .45s ease forwards}
+    @keyframes fadeout{to{opacity:0}}
+
+    .brand-footer{position:fixed;left:0;right:0;bottom:0;z-index:3;text-align:center;padding:14px 16px calc(14px + env(safe-area-inset-bottom));
+      font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.05em}
+    .brand-footer a{color:rgba(255,255,255,.8);text-decoration:none;font-weight:600}
+    .brand-footer a:hover{color:#fff}
+
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none !important;transition-duration:.01ms !important}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="lights"></div>
+  <div id="bubbles"></div>
+
+  <main class="cover" id="cover">
+    <p class="eyebrow">Pool Party</p>
+
+    <svg class="emblem" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="silverG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#c9cdd9"/>
+          <stop offset=".55" stop-color="#ffffff"/><stop offset=".8" stop-color="#9ea3b5"/>
+          <stop offset="1" stop-color="#eef0f5"/>
+        </linearGradient>
+        <clipPath id="circleClip"><circle cx="100" cy="100" r="78"/></clipPath>
+      </defs>
+      <circle cx="100" cy="100" r="92" fill="none" stroke="url(#silverG)" stroke-width="1.2" opacity=".6"/>
+      <circle cx="100" cy="100" r="80" fill="rgba(255,255,255,.07)" stroke="url(#silverG)" stroke-width="3"/>
+      <g clip-path="url(#circleClip)">
+        <path class="emb-wave" d="M0 128 Q25 118 50 128 T100 128 T150 128 T200 128 T250 128 T300 128 V200 H0Z" fill="rgba(205,179,236,.45)"/>
+        <path class="emb-wave slow" d="M0 140 Q25 131 50 140 T100 140 T150 140 T200 140 T250 140 T300 140 V200 H0Z" fill="rgba(255,255,255,.30)"/>
+      </g>
+      <text x="100" y="117" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="74" font-weight="600" fill="url(#silverG)">15</text>
+      <path d="M162 36 l3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3z" fill="#fff" opacity=".9"/>
+      <path d="M34 152 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z" fill="#fff" opacity=".7"/>
+    </svg>
+
+    <h1 class="name silver">Júlia Elizabelly</h1>
+    <p class="sub">XV Anos • <b>12 · 12 · 2026</b></p>
+
+    <button class="envelope" id="envelope" type="button" aria-label="Abrir convite">
+      <span class="env-back"></span>
+      <span class="env-letter"><span class="letter-text">Júlia<small>XV ANOS</small></span></span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="env-seal">J</span>
+    </button>
+
+    <p class="hint"><span>👆</span> Toque no envelope para abrir o convite</p>
+  </main>
+
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" aria-hidden="true">
+    <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs>
+    <g class="parallax">
+      <use href="#gentle-wave" x="48" y="0" fill="rgba(241,232,251,.30)"/>
+      <use href="#gentle-wave" x="48" y="3" fill="rgba(205,179,236,.30)"/>
+      <use href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,.16)"/>
+      <use href="#gentle-wave" x="48" y="7" fill="rgba(140,100,195,.75)"/>
+    </g>
+  </svg>
+
+  <footer class="brand-footer">
+    Convite criado por <a href="https://convidaeu.com.br" target="_blank" rel="noopener">Convida&amp;u</a>
+  </footer>
+
+  <script>
+    // Bolhas subindo
+    (function(){
+      const box = document.getElementById('bubbles');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const n = innerWidth < 640 ? 14 : 22;
+      for (let i = 0; i < n; i++) {
+        const b = document.createElement('span');
+        const s = 6 + Math.random() * 20;
+        b.className = 'bubble';
+        b.style.width = b.style.height = s + 'px';
+        b.style.left = Math.random() * 100 + '%';
+        b.style.animationDuration = (9 + Math.random() * 10) + 's';
+        b.style.animationDelay = (-Math.random() * 18) + 's';
+        b.style.setProperty('--sway', (Math.random() * 60 - 30) + 'px');
+        box.appendChild(b);
+      }
+    })();
+
+    // Abrir envelope → convite
+    const envelope = document.getElementById('envelope');
+    let abrindo = false;
+    envelope.addEventListener('click', () => {
+      if (abrindo) return;
+      abrindo = true;
+      envelope.classList.add('open');
+      setTimeout(() => document.getElementById('cover').classList.add('fade-out'), 1000);
+      setTimeout(() => { window.location.href = 'convite.html'; }, 1400);
+    });
+    // Se a pessoa voltar pelo botão "voltar", o envelope aparece fechado de novo
+    window.addEventListener('pageshow', () => {
+      abrindo = false;
+      envelope.classList.remove('open');
+      document.getElementById('cover').classList.remove('fade-out');
+    });
+  </script>
+</body>
+</html>
